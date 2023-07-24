@@ -33,10 +33,8 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """The function to be edited"""
-        assert isinstance(page, int) and page > 0,
-        "Page should be a positive integer"
-        assert isinstance(page_size, int) and page_size > 0,
-        "Page size should be a positive integer"
+        assert isinstance(page, int) and page > 0, "Page > 0"
+        assert isinstance(page_size, int) and page_size > 0, "Page size > 0"
         dataset = self.dataset()
         start_index, end_index = index_range(
                 page=page,
