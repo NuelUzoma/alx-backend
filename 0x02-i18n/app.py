@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Instantiate the Babel object in your app.
 Store it in a module-level variable named babel"""
 
