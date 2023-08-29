@@ -5,9 +5,6 @@ Store it in a module-level variable named babel"""
 
 from flask_babel import Babel
 from flask import Flask, render_template, request
-app = Flask(__name__)
-app.config.from_object(Config)
-babel = Babel(app)
 
 
 class Config:
@@ -15,6 +12,11 @@ class Config:
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
+
+
+app = Flask(__name__)
+app.config.from_object(Config)
+babel = Babel(app)
 
 
 @babel.localeselector
