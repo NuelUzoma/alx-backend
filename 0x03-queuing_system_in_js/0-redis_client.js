@@ -1,4 +1,4 @@
-import redis from 'redis';
+const redis = require('redis');
 const client = redis.createClient();
 
 // Connect to the Redis Server

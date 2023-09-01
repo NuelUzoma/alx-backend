@@ -1,33 +1,5 @@
-import kue from 'kue';
-
+const kue = require('kue');
 const queue = kue.createQueue();
-
-const jobs = [
-    {
-        phoneNumber: '4153518780',
-        message: 'This is the code 1234 to verify your account'
-      },
-      {
-        phoneNumber: '4153518781',
-        message: 'This is the code 4562 to verify your account'
-      },
-      {
-        phoneNumber: '4153518743',
-        message: 'This is the code 4321 to verify your account'
-      },
-      {
-        phoneNumber: '4153538781',
-        message: 'This is the code 4562 to verify your account'
-      },
-      {
-        phoneNumber: '4153118782',
-        message: 'This is the code 4321 to verify your account'
-      },
-      {
-        phoneNumber: '4153718781',
-        message: 'This is the code 4562 to verify your account'
-      }
-];
 
 function createPushNotificationsJobs(jobs, queue) {
     if (!Array.isArray(jobs)) {
@@ -56,4 +28,4 @@ function createPushNotificationsJobs(jobs, queue) {
     });
 }
 
-createPushNotificationsJobs(jobs, queue);
+module.exports = createPushNotificationsJobs;
