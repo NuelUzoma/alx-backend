@@ -7,7 +7,7 @@ client.on('connect', () => {
 });
 
 client.on('error', (error) => {
-    console.log(`Redis client error:, ${error}`);
+    console.log(`Redis client error: ${error}`);
 });
 
 client.hSet('HolbertonSchools', 'Portland', '50', redis.print);
